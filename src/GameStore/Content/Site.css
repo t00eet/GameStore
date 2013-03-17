@@ -130,15 +130,10 @@ footer {
 ----------------------------------------------------------*/
 .site-title {
     background: url("../Images/indie.png") no-repeat;
+    display: block;
     width: 153px;
     height: 73px;
-}
-
-.site-title a, .site-title a:hover, .site-title a:active {
-    background: none;
-    color: #c8c8c8;
-    outline: none;
-    text-decoration: none;
+    text-indent: -9999px;
 }
 
 
@@ -755,9 +750,11 @@ tr.pager td {
         }
 }
 
-/*  Admin Page  */
+.consumer-options {
+    margin-top: 15px;
+}
 
-.addNew {
+.mediumLink {
     font-weight: bold;
     font-size: 1.5em;
     margin-bottom: 10px;

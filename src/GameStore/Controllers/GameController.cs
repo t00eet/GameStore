@@ -39,20 +39,6 @@ namespace GameStore.Controllers
             return View(db.Games.ToList());
         }
 
-        //
-        // GET: /Game/Details/5
-
-        public ActionResult Details(int id = 0)
-        {
-            Game game = db.Games.Find(id);
-            if (game == null)
-            {
-                return HttpNotFound();
-            }
-            return View(game);
-        }
-
-        //
         // GET: /Game/Create
 
         public ActionResult Create()

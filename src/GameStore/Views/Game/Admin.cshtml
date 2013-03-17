@@ -16,7 +16,7 @@
 
 <h2>Admin Page</h2>
 
-@Html.ActionLink("Add New Game", "Create", new {}, new { @class="addNew float-right" })
+@Html.ActionLink("Add New Game", "Create", new {}, new { @class="mediumLink float-right" })
 
 <table id="gameTable" class="footable" data-filter="#filter" data-sort-initial="true">
     <thead>
@@ -71,7 +71,6 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ID })
         </td>
     </tr>

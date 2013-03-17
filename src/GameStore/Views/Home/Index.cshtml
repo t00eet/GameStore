@@ -14,5 +14,13 @@
         </div>
     </section>
 }
-<h3>Click below to see a full list of available games</h3>
-@Html.ActionLink("Start Shopping", "Index", "Game")
+<h3>Click below to see a full list of available titles, or search to find a specific game.</h3>
+
+<section class="consumer-options">
+    @Html.ActionLink("All Games", "Index", "Game", new { }, new { @class="mediumLink float-left" })
+    @using (Html.BeginForm("Index", "Game", FormMethod.Post, new { @class="float-right" }))
+    {
+        @Html.TextBox("query", null, new { name="query", placeholder="Enter a game title" })
+        @Html.TextBox("gameSearch", "Search", new { type = "submit" })
+    }
+</section>

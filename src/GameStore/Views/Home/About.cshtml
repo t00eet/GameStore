@@ -1,34 +1,28 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewBag.Title = "About Us";
 }
 
 <hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
+    <h1>@ViewBag.Title:</h1>
     <h2>@ViewBag.Message</h2>
 </hgroup>
 
 <article>
+    <h3>Additional Information</h3>
     <p>
-        Use this area to provide additional information.
-    </p>
-
-    <p>
-        Use this area to provide additional information.
-    </p>
-
-    <p>
-        Use this area to provide additional information.
+        This is my first project using ASP.NET MVC 4, and it's been an enjoyable experience building it.
     </p>
 </article>
 
 <aside>
-    <h3>Aside Title</h3>
+    <h3>Resources</h3>
     <p>
-        Use this area to provide additional information.
+        Below are links to some other resources I find helpful.
     </p>
     <ul>
-        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-        <li>@Html.ActionLink("About", "About", "Home")</li>
-        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+        @* I think it would be nice to write a custom html helper to link to absolute (external) urls.  I'll look into adding that time permitting *@
+        <li><a href="http://stackoverflow.com" target="_blank">Stackoverflow</a></li>
+        <li><a href="http://themergency.com/footable/" target="_blank">Footable Plugin</a></li>
+        <li><a href="http://www.csharp411.com/" target="_blank">CSharp 411</a></li>
     </ul>
 </aside>

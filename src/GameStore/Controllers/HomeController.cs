@@ -17,14 +17,19 @@ namespace GameStore.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your app description page.";
+            ViewBag.Message = "The Indie Game Store is dedicated to pretending to provide quality service for all customers.  We appreciate your interest!";
 
+            return View();
+        }
+
+        public ActionResult Faq()
+        {
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "If you got a problem, yo I'll solve it.";
 
             return View();
         }
