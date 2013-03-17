@@ -1,0 +1,80 @@
+﻿@model IEnumerable<GameStore.Models.Game>
+
+@{
+    ViewBag.Title = "Admin";
+}
+
+@section scripts {
+    <script type="text/javascript">
+        // initialize table plugin for sorting/filtering
+        $("#gameTable").footable();
+        // clean up last table header's sort functionality since it's the Buy column
+        $("th.footable-last-column").off("click");
+        $("th.footable-last-column").empty();    
+    </script>
+}
+
+<h2>Admin Page</h2>
+
+@Html.ActionLink("Add New Game", "Create", new {}, new { @class="addNew float-right" })
+
+<table id="gameTable" class="footable" data-filter="#filter" data-sort-initial="true">
+    <thead>
+        <tr>
+            <th data-class="expand">
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Platform)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Studio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating)
+            </th>
+            <th data-type="numeric">
+                @Html.DisplayNameFor(model => model.ReleaseDate)
+            </th>
+            <th data-type="numeric">
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Platform)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Studio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReleaseDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

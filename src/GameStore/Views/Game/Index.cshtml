@@ -1,0 +1,82 @@
+﻿@model IEnumerable<GameStore.Models.Game>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section scripts {
+    <script type="text/javascript">
+        // initialize table plugin for sorting/filtering
+        $("#gameTable").footable();
+        // clean up last table header's sort functionality since it's the Buy column
+        $("th.footable-last-column").off("click");
+        $("th.footable-last-column").empty();    
+    </script>
+}
+
+@using (Html.BeginForm("Index", "Game", FormMethod.Post, new { @class="float-left" }))
+{
+    @Html.TextBox("query", null, new { name="query", placeholder="Enter a game title" })
+    @Html.TextBox("gameSearch", "Search", new { type = "submit" })
+}
+
+@Html.TextBox("filter", null, new { type="text", @class="float-right", placeholder="Filter Results" })
+
+<table id="gameTable" class="footable" data-filter="#filter" data-sort-initial="true">
+    <thead>
+        <tr>
+            <th data-class="expand">
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Platform)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Studio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating)
+            </th>
+            <th data-type="numeric">
+                @Html.DisplayNameFor(model => model.ReleaseDate)
+            </th>
+            <th data-type="numeric">
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Platform)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Studio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReleaseDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            <input type="button" id="buy" value="Buy"/>
+        </td>
+    </tr>
+}
+
+</table>

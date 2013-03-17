@@ -182,15 +182,34 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201303161655455_Initial.cs" />
+    <Compile Include="Migrations\201303161655455_Initial.Designer.cs">
+      <DependentUpon>201303161655455_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201303161657225_AddedPrice.cs" />
+    <Compile Include="Migrations\201303161657225_AddedPrice.Designer.cs">
+      <DependentUpon>201303161657225_AddedPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Game.cs" />
+    <Compile Include="Models\GameContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\themes\base\footable-0.1.css" />
+    <Content Include="Content\themes\base\footable.sortable-0.1.css" />
+    <Content Include="Content\themes\base\images\footable\down.png" />
+    <Content Include="Content\themes\base\images\footable\minus.png" />
+    <Content Include="Content\themes\base\images\footable\plus.png" />
+    <Content Include="Content\themes\base\images\footable\sorting_sprite.png" />
+    <Content Include="Content\themes\base\images\footable\up.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -254,6 +273,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\footable-0.1.js" />
+    <Content Include="Scripts\footable.filter.js" />
+    <Content Include="Scripts\footable.sortable.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -307,12 +329,26 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Game\Index.cshtml" />
+    <Content Include="Views\Game\Details.cshtml" />
+    <Content Include="Views\Game\Create.cshtml" />
+    <Content Include="Views\Game\Edit.cshtml" />
+    <Content Include="Views\Game\Delete.cshtml" />
+    <Content Include="Views\Game\Admin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201303161655455_Initial.resx">
+      <DependentUpon>201303161655455_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201303161657225_AddedPrice.resx">
+      <DependentUpon>201303161657225_AddedPrice.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

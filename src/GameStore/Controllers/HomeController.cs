@@ -10,7 +10,7 @@ namespace GameStore.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            ViewBag.Message = "Find a game.  Buy a game.  Play a game.";
 
             return View();
         }
